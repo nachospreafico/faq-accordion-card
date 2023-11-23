@@ -6,14 +6,17 @@ const FAQItem = ({ question, answer, isActive, onClick }) => {
       <div className="flex flex-row justify-between items-center mb-3">
         <p
           className={`text-[13px] ${
-            isActive ? "font-bold text-[#1E1F36]" : "text-[#4B4C5F]"
-          } cursor-pointer hover:text-[#F47B56] lg:text-[14px]`}
+            isActive
+              ? "font-bold text-[#1E1F36]"
+              : "text-[#4B4C5F] hover:text-[#F47B56]"
+          } cursor-pointer lg:text-[14px]`}
+          onClick={onClick}
         >
           {question}
         </p>
         <img
           src={Arrow}
-          className={`w-[10px] h-[5px] duration-200 transform ${
+          className={`cursor-pointer w-[10px] h-[5px] duration-200 transform ${
             isActive ? "rotate-180" : ""
           }`}
           onClick={onClick}
